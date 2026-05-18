@@ -32,7 +32,8 @@ int32_t GetDefaultObjectIndex(uint64_t uClass) {
 What is the issue?
 
 Typically, SDK generators call the GetDefaultObjectIndex virtual method via VTable at index 114 (offset 0x390) to retrieve default class parameters
-In mobile builds (iOS/Android ARM64), aggressive compiler optimizations and dynamic VTable construction in memory cause this specific call to consistently trigger a Segmentation Fault or result in empty/broken structure files
+
+In mobile builds iOS/Android ARM64 aggressive compiler optimizations and dynamic VTable construction in memory cause this specific call to consistently trigger a Segmentation Fault or result in empty/broken structure files
 
 The Solution VTable Bypass
 
